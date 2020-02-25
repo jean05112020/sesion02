@@ -19,12 +19,19 @@ public class Programa2 {
 		lista.add(e2);
 		lista.add(e3);
 
-		Comparator<Empleado> comparator = new Comparator<Empleado>() {
+		Comparator<Empleado> comparatorNombres = new Comparator<Empleado>() {
 
 			@Override
 			public int compare(Empleado o1, Empleado o2) {
 				// TODO Auto-generated method stub
-//				return -o1.getNombres().compareTo(o2.getNombres());
+				return o1.getNombres().compareTo(o2.getNombres());
+			}
+		};
+
+		Comparator<Empleado> comparatorEdad = new Comparator<Empleado>() {
+
+			@Override
+			public int compare(Empleado o1, Empleado o2) {
 				if (o1.getEdad() < o2.getEdad()) {
 					return -1;
 				} else if (o1.getEdad() > o2.getEdad()) {
@@ -34,12 +41,47 @@ public class Programa2 {
 				}
 			}
 		};
+		
+		Comparator<Empleado> comparatorSueldo = new Comparator<Empleado>() {
 
-		Collections.sort(lista, comparator);
-		System.out.println("Lista de empleados:");
-		for (Empleado empleado : lista) {
-			System.out.println(empleado);
-		}
+			@Override
+			public int compare(Empleado o1, Empleado o2) {
+				if (o1.getSueldo() < o2.getSueldo()) {
+					return -1;
+				} else if (o1.getSueldo() > o2.getSueldo()) {
+					return 1;
+				} else {
+					return 0;
+				}
+			}
+		};
+
+//		Collections.sort(lista, comparatorEdad);
+//		System.out.println("Lista de empleados con comparator:");
+//		for (Empleado empleado : lista) {
+//			System.out.println(empleado);
+//		}
+		
+//		lista.sort(comparatorSueldo);
+//		System.out.println("Lista.sort de empleados con comparator:");
+//		for (Empleado empleado : lista) {
+//			System.out.println(empleado);
+//		}
+		
+		// Ordenamiento Nombres
+//		lista.sort((o1, o2) -> o1.getNombres().compareTo(o2.getNombres()));
+
+//		Revisar edad()
+		lista.sort((Empleado o1, Empleado o2) -> {
+			if (o1.getEdad() < o2.getEdad()) {
+				return -1;
+			} else if (o1.getEdad() > o2.getEdad()) {
+				return 1;
+			} else {
+				return 0;
+			}
+		});
+		
 
 	}
 
