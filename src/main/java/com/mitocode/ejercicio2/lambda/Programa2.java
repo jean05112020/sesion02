@@ -14,12 +14,12 @@ public class Programa2 {
 		};
 		
 		System.out.println("Suma: " + op1.suma(5, 3));
-		
+	//		Con lambda	
 		IOperacion op2 = (x,y) -> {
 			int z = 10;
 			return x + y + z;
 		};
-//		Con lambda
+
 		System.out.println("Suma: " + op2.suma(5, 3));
 		
 //		Lambda sin argumentos

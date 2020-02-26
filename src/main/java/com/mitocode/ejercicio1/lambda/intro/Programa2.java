@@ -50,7 +50,7 @@ public class Programa2 {
 					return -1;
 				} else if (o1.getSueldo() > o2.getSueldo()) {
 					return 1;
-				} else {
+				} else { 
 					return 0;
 				}
 			}
